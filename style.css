@@ -1,0 +1,44 @@
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+#ui{
+  text-align:center;
+  margin-bottom:10px;
+  width:480px;
+}
+#topbar{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+#langwrap label{ font-size:13px; margin-right:6px; }
+#game{
+  background: linear-gradient(#7ec850, #5fb13a);
+  border:6px solid #333;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+#info{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:6px;
+}
+button{
+  padding:6px 10px;
+  background:#ffda6a;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+}
+#donate{ font-size:13px; margin-top:6px; }
+#donate a{ color:#ffd28a; text-decoration:none; }
+
+/* small responsive tweak */
+@media (max-width:520px){
+  #ui, #game{ width:92%; }
+}
