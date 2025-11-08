@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Road</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-board">
+            <div class="score">Money: $<span id="money">0</span></div>
+            <div class="distance">Distance: <span id="distance">0</span>m</div>
+        </div>
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div id="gameOver" class="game-over hidden">
+            <h2>Game Over!</h2>
+            <p>Money Earned: $<span id="finalMoney">0</span></p>
+            <p>Distance Traveled: <span id="finalDistance">0</span>m</p>
+            <button id="restartBtn">Play Again</button>
+        </div>
+        <div class="controls">
+            <p>Use Arrow Keys to Move</p>
+            <p>Collect coins to earn money!</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
