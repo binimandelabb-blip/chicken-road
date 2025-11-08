@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="8" y="8" width="84" height="84" fill="#000"/>
+  <rect x="16" y="16" width="68" height="68" fill="#fff"/>
+  <rect x="28" y="28" width="40" height="40" fill="#000"/>
+
+  <rect x="208" y="8" width="84" height="84" fill="#000"/>
+  <rect x="216" y="16" width="68" height="68" fill="#fff"/>
+  <rect x="228" y="28" width="40" height="40" fill="#000"/>
+
+  <rect x="8" y="208" width="84" height="84" fill="#000"/>
+  <rect x="16" y="216" width="68" height="68" fill="#fff"/>
+  <rect x="28" y="228" width="40" height="40" fill="#000"/>
+
+  <!-- simple simulated QR pattern -->
+  <rect x="110" y="60" width="12" height="12" fill="#000"/>
+  <rect x="126" y="60" width="24" height="12" fill="#000"/>
+  <rect x="110" y="76" width="12" height="24" fill="#000"/>
+  <rect x="150" y="110" width="8" height="8" fill="#000"/>
+  <rect x="170" y="130" width="10" height="10" fill="#000"/>
+  <rect x="80" y="150" width="8" height="8" fill="#000"/>
+  <rect x="200" y="170" width="12" height="12" fill="#000"/>
+
+  <text x="150" y="285" font-size="14" fill="#000" text-anchor="middle">Telebirr: 0927145171</text>
+</svg>
