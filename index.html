@@ -1,37 +1,9 @@
-<!doctype html>
-<html lang="am">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chicken Road — ዶሮ መባለያ</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="ui">
-    <div id="topbar">
-      <h1 id="title">Chicken Road</h1>
-      <div id="langwrap">
-        <label for="lang">Language:</label>
-        <select id="lang">
-          <option value="am">አማ</option>
-          <option value="en">EN</option>
-        </select>
-      </div>
+<!-- QR Modal Markup -->
+<div id="qrModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Scan to Pay with Telebirr</h2>
+        <img src="assets/telebirr-qr.svg" alt="Telebirr QR Code" />
+        <p>Use this number: 1234567890</p>
     </div>
-
-    <div id="info">
-      <span id="score">Score: 0</span>
-      <button id="restart">Restart</button>
-    </div>
-
-    <div id="donate">
-      <span id="donate-text">Support / Donate:</span>
-      <a id="donate-link" href="#" target="_blank">Telebirr: 0927145171</a>
-    </div>
-  </div>
-
-  <canvas id="game" width="480" height="640"></canvas>
-
-  <script src="script.js"></script>
-</body>
-</html>
+</div>
