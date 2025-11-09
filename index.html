@@ -3,27 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicken Road</title>
+    <title>Chicken Road - Ethiopian Edition</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
 </head>
 <body>
-    <div class="game-container">
-        <div class="score-board">
-            <div class="score">Money: $<span id="money">0</span></div>
-            <div class="distance">Distance: <span id="distance">0</span>m</div>
+    <div id="dashboard" class="dashboard">
+        <div class="dashboard-header">
+            <h1>💰 Your Dashboard</h1>
+            <button id="closeDashboard" class="close-btn">✕</button>
         </div>
-        <canvas id="gameCanvas" width="400" height="600"></canvas>
-        <div id="gameOver" class="game-over hidden">
-            <h2>Game Over!</h2>
-            <p>Money Earned: $<span id="finalMoney">0</span></p>
-            <p>Distance Traveled: <span id="finalDistance">0</span>m</p>
-            <button id="restartBtn">Play Again</button>
+        <div class="dashboard-content">
+            <div class="wallet-section">
+                <div class="wallet-card">
+                    <h2>💳 Wallet Balance</h2>
+                    <p class="balance"><span id="walletBalance">0</span> ብር</p>
+                </div>
+                <div class="stats-card">
+                    <h3>📊 Statistics</h3>
+                    <p>Total Earned: <span id="totalEarned">0</span> ብር</p>
+                    <p>Games Played: <span id="gamesPlayed">0</span></p>
+                    <p>Best Distance: <span id="bestDistance">0</span>m</p>
+                    <p>Total Deposits: <span id="totalDeposits">0</span> ብር</p>
+                    <p>Total Withdrawals: <span id="totalWithdrawals">0</span> ብር</p>
+                </div>
+            </div>
+            <div class="transaction-buttons">
+                <button id="depositBtn" class="transaction-btn deposit-btn">💵 Deposit</button>
+                <button id="withdrawBtn" class="transaction-btn withdraw-btn">💸 Withdraw</button>
+            </div>
+            <div class="history-section">
+                <h3>📜 Transaction History</h3>
+                <div id="transactionHistory" class="transaction-list"></div>
+            </div>
         </div>
-        <div class="controls">
-            <p>Use Arrow Keys to Move</p>
-            <p>Collect coins to earn money!</p>
+        <button id="playGameBtn" class="play-game-btn">🎮 Play Game</button>
+    </div>
+
+    <div id="gameView" class="game-view hidden">
+        <button id="openDashboard" class="dashboard-icon-btn">📊</button>
+        <div class="game-container">
+            <div class="score-board">
+                <div class="score">Money: <span id="money">0</span> ብር</div>
+                <div class="distance">Distance: <span id="distance">0</span>m</div>
+            </div>
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+            <div id="gameOver" class="game-over hidden">
+                <h2>Game Over!</h2>
+                <p>Money Earned: <span id="finalMoney">0</span> ብር</p>
+                <p>Distance Traveled: <span id="finalDistance">0</span>m</p>
+                <button id="restartBtn">Play Again</button>
+                <button id="backToDashboard">Back to Dashboard</button>
+            </div>
+            <div class="controls">
+                <p>Use Arrow Keys to Move</p>
+                <p>Collect coins to earn money!</p>
+            </div>
         </div>
     </div>
+
+    <div id="depositModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>💵 Deposit Money</h2>
+            <p>Add Ethiopian Birr to your wallet</p>
+            <input type="number" id="depositAmount" placeholder="Enter amount" min="1" step="1">
+            <div class="modal-buttons">
+                <button id="confirmDeposit" class="confirm-btn">Confirm</button>
+                <button id="cancelDeposit" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="withdrawModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>💸 Withdraw Money</h2>
+            <p>Withdraw from your wallet balance</p>
+            <p class="available">Available: <span id="availableBalance">0</span> ብር</p>
+            <input type="number" id="withdrawAmount" placeholder="Enter amount" min="1" step="1">
+            <div class="modal-buttons">
+                <button id="confirmWithdraw" class="confirm-btn">Confirm</button>
+                <button id="cancelWithdraw" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <script src="game.js"></script>
 </body>
 </html>
