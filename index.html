@@ -1,9 +1,92 @@
-<!-- QR Modal Markup -->
-<div id="qrModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Scan to Pay with Telebirr</h2>
-        <img src="assets/telebirr-qr.svg" alt="Telebirr QR Code" />
-        <p>Use this number: 1234567890</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Road - Ethiopian Birr Wallet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="am">አማርኛ (Amharic)</option>
+            </select>
+        </div>
+
+        <!-- Wallet Balance Display -->
+        <div class="wallet-section">
+            <h1 id="walletTitle">Ethiopian Birr Wallet</h1>
+            <div class="balance-display">
+                <span id="balanceLabel">Current Balance:</span>
+                <span class="balance-amount" id="balanceAmount">0.00 ETB</span>
+            </div>
+        </div>
+
+        <!-- Deposit and Withdrawal Actions -->
+        <div class="actions-section">
+            <button class="action-btn deposit-btn" onclick="openDepositModal()">
+                <span id="depositBtnText">💰 Deposit</span>
+            </button>
+            <button class="action-btn withdraw-btn" onclick="openWithdrawModal()">
+                <span id="withdrawBtnText">💸 Withdraw</span>
+            </button>
+        </div>
+
+        <!-- Transaction History -->
+        <div class="transaction-history">
+            <h2 id="historyTitle">Transaction History</h2>
+            <div id="transactionList" class="transaction-list">
+                <p id="noTransactions">No transactions yet</p>
+            </div>
+        </div>
     </div>
-</div>
+
+    <!-- Deposit Modal -->
+    <div id="depositModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDepositModal()">&times;</span>
+            <h2 id="depositModalTitle">Deposit Ethiopian Birr</h2>
+            <div class="form-group">
+                <label for="depositAmount" id="depositAmountLabel">Enter Amount (ETB):</label>
+                <input type="number" id="depositAmount" min="1" step="0.01" placeholder="0.00">
+            </div>
+            <button class="submit-btn" onclick="processDeposit()">
+                <span id="depositSubmitText">Confirm Deposit</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Withdraw Modal -->
+    <div id="withdrawModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWithdrawModal()">&times;</span>
+            <h2 id="withdrawModalTitle">Withdraw Ethiopian Birr</h2>
+            <div class="form-group">
+                <label for="withdrawAmount" id="withdrawAmountLabel">Enter Amount (ETB):</label>
+                <input type="number" id="withdrawAmount" min="1" step="0.01" placeholder="0.00">
+            </div>
+            <div class="info-message" id="withdrawInfo">
+                Available Balance: <span id="availableBalance">0.00 ETB</span>
+            </div>
+            <button class="submit-btn" onclick="processWithdraw()">
+                <span id="withdrawSubmitText">Confirm Withdrawal</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- QR Modal for Telebirr Payment -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Scan to Pay with Telebirr</h2>
+            <img src="assets/telebirr-qr.svg" alt="Telebirr QR Code" />
+            <p id="telNumber">Use this number: 0927145171</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
